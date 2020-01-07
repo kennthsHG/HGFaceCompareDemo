@@ -12,6 +12,10 @@
 ## 重要
 重要的方法，已经封装成了.a库，暂不开源，以后完善会考虑开源。实际使用中，由于姿态等问题可能会导致误识别，有什么问题可以来我的简书联系我哦
 
+## 集成
+demo中集成了ncnn，opencv，训练模型，ncnn已经集成进去了，要运行程序还需下载opencv2加入项目Frameworks文件中，需要带ios.h的版本，直接下载最新的就可以使用了，还需要加入一个mlmmodel,这里提供下下载地址，下载后拖进Frameworks文件中就可以了   
+[mlmmodel地址](https://pan.baidu.com/s/1hLW1xEwkJcaOUXHXAjdRuA) 提取密码:tr0s 
+
 ## 使用方法
  1、提取人脸特征
  ```
