@@ -10,7 +10,38 @@
     * 支持两张人脸图直接对比，对比出分值按实际效果确定
 
 ## 重要
-重要的方法，已经封装成了.a库，暂不开源，以后完善会考虑开源。实际使用中，有什么问题可以来我的简书联系我哦
+重要的方法，已经封装成了.a库，暂不开源，以后完善会考虑开源。实际使用中，由于姿态等问题可能会导致误识别，有什么问题可以来我的简书联系我哦
+
+## 使用方法
+ 1、提取人脸特征
+ ```
+ NSError *error;
+ NSArray *nowFaceMtcnnResult = [self.tool detectPersonMaxFace:image error:&error];
+  if (error) {
+        UIAlertController *alterVc = [UIAlertController alertControllerWithTitle:@"提示" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle: @"好的" style:UIAlertActionStyleDefault handler: nil];
+
+        [alterVc addAction:okAction];
+
+        [self presentViewController:alterVc animated:YES completion:nil];
+        return;
+    }
+self.personFeatureArray = [self.tool getFaceFeaturesWithPersonImage:self.personFaceImageView.image landmarks:nowFaceMtcnnResult.firstObject];
+ ```
+ 
+ 2.对比人脸
+ 2.1 直接图片对比 速度较慢会有延时
+ ```
+ NSError *error;
+ CGFloat score = [HGFaceCompareFeattureTool compareFaceIsSimilarity:self.nowImageView.image compareFaceImage:self.compareImageView.image error:&error];
+ ```
+ 2.2 对比特征库特征点
+ ```
+ NSDictionary *simResult = [HGFaceCompareFeattureTool findMostSimilarityFeature:features inFeatureDataSource:whichFeaturesArray];
+ NSInteger index = [simResult[@"maxScoreIndex"] integerValue];
+ CGFloat score = [simResult[@"maxScore"] floatValue];
+ ```
 
 ## 效果图
 
