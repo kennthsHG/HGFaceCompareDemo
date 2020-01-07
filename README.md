@@ -14,13 +14,13 @@
 
 ## 效果图
 
-1、录入人脸     
+1、录入人脸   
 ![image](https://github.com/kennthsHG/Image/blob/master/first.gif)
 
-2、对比人脸
+2、对比人脸   
 ![image](https://github.com/kennthsHG/Image/blob/master/second.gif)
 
-3、两张人脸对比
+3、两张人脸对比   
 ![image](https://github.com/kennthsHG/Image/blob/master/third.gif)
 ![image](https://github.com/kennthsHG/Image/blob/master/four.gif)
 
